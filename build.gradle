@@ -1,5 +1,6 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+
 subprojects {
         apply plugin: 'java'
         apply plugin: 'idea'
@@ -10,6 +11,7 @@ subprojects {
         }
         dependencies {
                 testCompile 'junit:junit:4.12'
+                compile "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"
         }
 
         group = 'uk.co.jpereira.marta'
