@@ -6,8 +6,8 @@ import javax.ws.rs.PathParam;
 /**
  * Created by joao on 4/12/16.
  */
-@Path("/webapi")
-public class UserService {
+@Path(BaseAPI.BASE_URL + "/user/")
+public class UserService extends BaseAPI{
     @GET
     @Path("/{name}")
     public String sayHello(@PathParam("name") String name) {
