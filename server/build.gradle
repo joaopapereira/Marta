@@ -20,10 +20,11 @@ repositories {
 
 dependencies {
     compile project(':core')
-    providedCompile "javax.ws.rs:javax.ws.rs-api:$rsApiVersion"
-    compile "org.glassfish.jersey.core:jersey-server:$jerseyVersion"
+    providedCompile "javax.servlet:javax.servlet-api:$depVersions.servletApi"
+    providedCompile "javax.ws.rs:javax.ws.rs-api:$depVersions.rsApiVersion"
+    compile "org.glassfish.jersey.core:jersey-server:$depVersions.jerseyVersion"
     // Jersey core Servlet 3.x implementation
-    compile "org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion"
+    compile "org.glassfish.jersey.containers:jersey-container-servlet:$depVersions.jerseyVersion"
     // Jersey Test Framework — Grizzly2 container
-    testCompile "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion"
+    testCompile "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$depVersions.jerseyVersion"
 }

@@ -1,0 +1,5 @@
+dependencies {
+  compile project(":core")
+  compile "javax.ws.rs:javax.ws.rs-api:$depVersions.rsApiVersion"
+  compile "org.glassfish.jersey.core:jersey-client:$depVersions.jerseyVersion"
+}
