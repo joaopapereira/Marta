@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
     compile project(':core')
+    compile project(':database')
     providedCompile "javax.servlet:javax.servlet-api:$depVersions.servletApi"
     providedCompile "javax.ws.rs:javax.ws.rs-api:$depVersions.rsApiVersion"
     compile "org.glassfish.jersey.core:jersey-server:$depVersions.jerseyVersion"
