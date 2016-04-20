@@ -1,4 +1,5 @@
 
 dependencies {
     compile 'org.springframework.data:spring-data-mongodb:1.9.1.RELEASE'
+    compile project(':core')
 }

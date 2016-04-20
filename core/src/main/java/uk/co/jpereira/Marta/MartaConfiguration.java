@@ -12,10 +12,10 @@ import java.util.logging.Logger;
 /**
  * Created by joao on 4/18/16.
  */
-public class Configuration {
+public class MartaConfiguration {
 
 
-    private Logger logger = Logger.getLogger(String.valueOf(Configuration.class));
+    private Logger logger = Logger.getLogger(String.valueOf(MartaConfiguration.class));
     private Map< String, String > log;
     private String pathToKey;
 
@@ -67,10 +67,10 @@ public class Configuration {
         this.log = users;
     }
 
-    public static Configuration loadConfigurationFile(String path, Class configurationClass) {
+    public static MartaConfiguration loadConfigurationFile(String path, Class configurationClass) {
         Yaml yaml = new Yaml();
         try( InputStream in = Files.newInputStream(Paths.get(path)) ) {
-            Configuration config = yaml.loadAs( in, Configuration.class );
+            MartaConfiguration config = yaml.loadAs( in, MartaConfiguration.class );
             return config;
         } catch (IOException e) {
             e.printStackTrace();
@@ -79,7 +79,7 @@ public class Configuration {
     }
 
 
-    public void add(Configuration configuration) {
+    public void add(MartaConfiguration configuration) {
         if(configuration == null)
             return;
         if(configuration.getPathToKey() != null ) {
@@ -94,5 +94,9 @@ public class Configuration {
         for(Map.Entry<String, String> logLevel: log.entrySet()) {
             Logger.getLogger(logLevel.getKey()).setLevel(Level.parse(logLevel.getValue()));
         }
+    }
+
+    public String getDatabaseURI() {
+        return "";
     }
 }

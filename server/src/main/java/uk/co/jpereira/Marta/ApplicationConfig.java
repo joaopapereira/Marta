@@ -17,8 +17,8 @@ public class ApplicationConfig extends ResourceConfig {
         this.getConfiguration().getProperty("configuration_path");
 
         Injector injector = Guice.createInjector(new ServerModule());
-        ServerConfiguration config = (ServerConfiguration)injector.getInstance(Configuration.class);
-        ServerConfiguration loadedConfig = (ServerConfiguration)Configuration.loadConfigurationFile(ServerConfiguration.configurationPaths[0], ServerConfiguration.class);
+        ServerMartaConfiguration config = (ServerMartaConfiguration)injector.getInstance(MartaConfiguration.class);
+        ServerMartaConfiguration loadedConfig = (ServerMartaConfiguration) MartaConfiguration.loadConfigurationFile(ServerMartaConfiguration.configurationPaths[0], ServerMartaConfiguration.class);
         config.add(loadedConfig);
     }
 

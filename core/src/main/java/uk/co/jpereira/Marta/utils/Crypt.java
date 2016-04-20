@@ -1,6 +1,6 @@
 package uk.co.jpereira.Marta.utils;
 
-import uk.co.jpereira.Marta.Configuration;
+import uk.co.jpereira.Marta.MartaConfiguration;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
@@ -10,14 +10,13 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.time.LocalDateTime;
 
 /**
  * Created by joao on 4/18/16.
  */
 public class Crypt {
     @Inject
-    Configuration configuration;
+    MartaConfiguration martaConfiguration;
     private String encryptValue(String value, String key, String seed) {
         byte[] input = value.getBytes();
         byte[] keyBytes = key.getBytes();
@@ -57,10 +56,10 @@ public class Crypt {
     }
 
     private String encryptValue(String value) {
-        return encryptValue(value, configuration.getKey(), "asdasd");
+        return encryptValue(value, martaConfiguration.getKey(), "asdasd");
     }
     private String encryptValue(String value, String seed) {
-        return encryptValue(value, configuration.getKey(), seed);
+        return encryptValue(value, martaConfiguration.getKey(), seed);
     }
 
     public static String encrypt(String value) {

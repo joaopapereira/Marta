@@ -1,5 +1,9 @@
 package uk.co.jpereira.Marta.database.model;
 
+import org.springframework.data.annotation.Id;
+
+import java.math.BigInteger;
+
 /**
  * Created by joao on 4/18/16.
  */

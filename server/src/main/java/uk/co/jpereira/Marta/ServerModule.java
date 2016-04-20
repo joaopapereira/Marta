@@ -8,6 +8,6 @@ import com.google.inject.AbstractModule;
 public class ServerModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(Configuration.class).to(ServerConfiguration.class);
+        bind(MartaConfiguration.class).to(ServerMartaConfiguration.class);
     }
 }
