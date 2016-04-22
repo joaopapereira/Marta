@@ -1,0 +1,17 @@
+apply plugin: 'osgi'                                                                                                                                                                                                                            
+
+jar {
+    manifest { // the manifest of the default jar is of type OsgiManifest
+        name = 'MartaPlugins'
+        instruction 'Private-Package',
+                'uk.co.jpereira.Marta.plugins'
+        instruction 'Bundle-Vendor', 'Joao Pereira'
+        instruction 'Bundle-Description', 'Marta Project: platform that collect metrics from multiple agents'
+        instruction 'Bundle-DocURL', 'http://www.jpereira.co.uk'
+    }
+}
+task fooJar(type: Jar) {
+    manifest = osgiManifest {
+        instruction 'Bundle-Vendor', 'Joao Pereira'
+    }
+}
