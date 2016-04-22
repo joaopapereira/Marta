@@ -3,11 +3,13 @@ package uk.co.jpereira.Marta.protocol.messages;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import uk.co.jpereira.Marta.utils.Crypt;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDateTime;
 
 /**
  * Created by joao on 4/18/16.
  */
+@XmlRootElement
 public class ChallengeMessage extends BaseMessage {
     @JsonProperty
     private String token;
